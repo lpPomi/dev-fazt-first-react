@@ -76,11 +76,12 @@ function App() {
 
   function deleteTaskFunction(tasksId) {
     // show the tasks object and task id
-    console.log(tasks)
+    /* console.log(tasks)
     console.log(tasksId)
-    const resDelete = tasks.filter((task) => task.id !== tasksId);
-    console.log(resDelete)
+    
+    console.log(resDelete) */
     /* to delete the element in the html we put it in the setTasks() function */
+    const resDelete = tasks.filter((task) => task.id !== tasksId);
     setTasks(resDelete)
 
   }
@@ -88,17 +89,19 @@ function App() {
 
 
   return (
-    <>
+    <main className='bg-zinc-700 h-screen'>
       {/* send the data (tasks) from the function CreateTaskFunction to the TaskForm component 
           createTask is the property in the {..} lies the function createTaskFunction  
       */}
-      <TaskForm createTask={createTaskFunction} />
-      {/* the tasks are send via props to the component TaskList! */}
-      <TaskList tasks={tasks} deleteTask={deleteTaskFunction} />
 
-      {/*       <TaskCard tasks={tasks} /> */}
+      <div className='container mx-auto p-10'>
+        <TaskForm createTask={createTaskFunction} />
+        {/* the tasks are send via props to the component TaskList! */}
+        <TaskList tasks={tasks} deleteTask={deleteTaskFunction} />
 
-    </>
+        {/*       <TaskCard tasks={tasks} /> */}
+      </div>
+    </main>
   );
 }
 export default App;

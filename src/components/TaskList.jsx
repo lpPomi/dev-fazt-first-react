@@ -12,14 +12,14 @@ function TaskList({ tasks, deleteTask }) {
   // check if the tasks are empty
   if (tasks.length === 0) {
     /*     console.log('tasks are empty') */
-    return <h1>tasks are empty</h1>
+    return <h1 className='text-white text-4xl font-bold text-center'>tasks are empty</h1>
   }
 
   return (
 
-    < div >
-      <h1>Show all tasks</h1>
-      <hr />
+    < div className='grid grid-cols-4 gap-2'>
+      {/*  <h1>Show all tasks</h1>
+      <hr /> */}
       {
         tasks.map((task) => (
           <TaskCard key={task.id} task={task} deteleTask={deleteTask} />

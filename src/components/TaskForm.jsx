@@ -70,22 +70,26 @@ function TaskForm({ createTask }) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            {/*  <input placeholder="create a task" onChange={handleChange} /> */}
-            {/* create an input field for the task */}
-            {/*   to clear the input use value={title} */}
-            <input placeholder="create a task" onChange={getTitle} value={title} autoFocus />
 
-            {/* create a textarea for the description field */}
-            {/*   to clear the input use value={description} */}
-            <textarea placeholder="description" onChange={getDescription} value={description} />
+        <div className='max-w-md mx-auto'>
+            <form className='bg-slate-800 p-10 mb-4' onSubmit={handleSubmit}>
+                {/*  <input placeholder="create a task" onChange={handleChange} /> */}
+                {/* create an input field for the task */}
+                {/*   to clear the input use value={title} */}
+                <h1 className='text-2x1 font-bold text-white mb-3'>Create task</h1>
+                <input className='bg-slate-300 p-3 w-full mb-2' placeholder="create a task" onChange={getTitle} value={title} autoFocus />
 
-            <button onClick={() => {
-                /*    console.log('Hi Button'); */
-            }}>
-                save
-            </button>
-        </form>
+                {/* create a textarea for the description field */}
+                {/*   to clear the input use value={description} */}
+                <textarea className='bg-slate-300 p-3 w-full mb-2' placeholder="description" onChange={getDescription} value={description} />
+
+                <button className='bg-indigo-500 px-3 py-1 text-white' onClick={() => {
+                    /*    console.log('Hi Button'); */
+                }}>
+                    save
+                </button>
+            </form>
+        </div>
     )
 }
 
