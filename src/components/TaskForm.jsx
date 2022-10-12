@@ -1,11 +1,19 @@
 
 import { useState } from 'react'
 
+/* import { useContext } from 'react'
+import { TaskContext } from '../context/TaskContext' */
 
 // the function get as parameter from the parent App component the property createTask
 // the property createTask has a function in the App component
 // Attention the property createTask must be included in brackets { ..}
 function TaskForm({ createTask }) {
+
+
+    // to read a value from the TaskContext  
+    /*   const valor = useContext(TaskContext)
+      console.log('value from TaskForm:', valor) */
+
 
     // save the contend from input in a react state and variable with useState
     // for the title .. init value is empty

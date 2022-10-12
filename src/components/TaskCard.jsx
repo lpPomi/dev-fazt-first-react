@@ -1,6 +1,11 @@
-
+/* import { useContext } from 'react'
+import { TaskContext } from '../context/TaskContext' */
 // this component become the "task" as props from the TaskList component
 function TaskCard({ task, deteleTask }) {
+    // to read a value from the TaskContext  
+    /*     const valor = useContext(TaskContext)
+        console.log('value from TaskContext:', valor)
+     */
     //console.log(task)
 
 
@@ -22,7 +27,6 @@ function TaskCard({ task, deteleTask }) {
         const resDelete = a.filter((n) => n !== 10);
         const resDelete = tasks.filter((task) => task.id !== tasksId);
         but called from the App component
-
         */
         <div>
             <h2>{task.title}</h2>
