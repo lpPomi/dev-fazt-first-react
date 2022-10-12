@@ -74,6 +74,19 @@ function App() {
   }
 
 
+  function deleteTaskFunction(tasksId) {
+    // show the tasks object and task id
+    console.log(tasks)
+    console.log(tasksId)
+    const resDelete = tasks.filter((task) => task.id !== tasksId);
+    console.log(resDelete)
+    /* to delete the element in the html we put it in the setTasks() function */
+    setTasks(resDelete)
+
+  }
+
+
+
   return (
     <>
       {/* send the data (tasks) from the function CreateTaskFunction to the TaskForm component 
@@ -81,7 +94,7 @@ function App() {
       */}
       <TaskForm createTask={createTaskFunction} />
       {/* the tasks are send via props to the component TaskList! */}
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} deleteTask={deleteTaskFunction} />
 
       {/*       <TaskCard tasks={tasks} /> */}
 
