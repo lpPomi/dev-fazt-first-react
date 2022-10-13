@@ -1,7 +1,16 @@
+import { useContext } from 'react'
+import { TaskContext } from '../context/TaskContext'
+
+
 /* import { useContext } from 'react'
 import { TaskContext } from '../context/TaskContext' */
 // this component become the "task" as props from the TaskList component
-function TaskCard({ task, deteleTask }) {
+function TaskCard({ task }) {
+
+    // use now the context and get only what i need... e.g. tasks
+    const { deleteTask } = useContext(TaskContext)
+
+    /* function TaskCard({ task, deteleTask }) { */
     // to read a value from the TaskContext  
     /*     const valor = useContext(TaskContext)
         console.log('value from TaskContext:', valor)
@@ -31,7 +40,7 @@ function TaskCard({ task, deteleTask }) {
         <div className="bg-gray-800 text-white p-4 rounded-md">
             <h1 className="text-x1 font-bold capitalize">{task.title}</h1>
             <p className="text-green-500 text-sm">{task.description}</p>
-            <button className="bg-red-400 px-2 py-1 rounded-md mt-4 hover:bg-red-300" onClick={() => { deteleTask(task.id) }}
+            <button className="bg-red-400 px-2 py-1 rounded-md mt-4 hover:bg-red-300" onClick={() => { deleteTask(task.id) }}
             >delete</button>
         </div >
     )

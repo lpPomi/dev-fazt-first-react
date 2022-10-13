@@ -1,5 +1,8 @@
 
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+
+import { TaskContext } from '../context/TaskContext'
+
 
 /* import { useContext } from 'react'
 import { TaskContext } from '../context/TaskContext' */
@@ -7,8 +10,14 @@ import { TaskContext } from '../context/TaskContext' */
 // the function get as parameter from the parent App component the property createTask
 // the property createTask has a function in the App component
 // Attention the property createTask must be included in brackets { ..}
-function TaskForm({ createTask }) {
+// by using context we dont need to get the createTask here
+/* function TaskForm({ createTask }) { */
+function TaskForm() {
 
+    // use now the context and get only what i need... e.g. function createTask
+    const { createTask } = useContext(TaskContext)
+
+    //console.log(value)
 
     // to read a value from the TaskContext  
     /*   const valor = useContext(TaskContext)

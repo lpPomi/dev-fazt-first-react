@@ -1,13 +1,27 @@
 
 import TaskCard from './TaskCard';
 
-// this component become the "tasks" as props from App component
-function TaskList({ tasks, deleteTask }) {
-  // we can use props or {tasks} in the TaskList() parameter
-  // also from TaskList(props)  to TaskList({tasks})
-  // then we don need to write  props.tasks.length anymore...
-  // tasks.length is ok
-  // deleteTasks is a property that included a function deleteTaskFunction
+import { useContext } from 'react'
+import { TaskContext } from '../context/TaskContext'
+
+
+
+
+// this component becomes the tasks and deleteTask as props from App component
+/* function TaskList({ tasks, deleteTask }) { */
+// we can use props or {tasks} in the TaskList() parameter
+// also from TaskList(props)  to TaskList({tasks})
+// then we don need to write  props.tasks.length anymore...
+// tasks.length is ok
+// deleteTasks is a property that included a function deleteTaskFunction
+
+
+// by using context we dont need the props anymore
+function TaskList() {
+
+  // use now the context and get only what i need... e.g. tasks
+  const { tasks } = useContext(TaskContext)
+
 
   // check if the tasks are empty
   if (tasks.length === 0) {
@@ -22,7 +36,8 @@ function TaskList({ tasks, deleteTask }) {
       <hr /> */}
       {
         tasks.map((task) => (
-          <TaskCard key={task.id} task={task} deteleTask={deleteTask} />
+          /*  <TaskCard key={task.id} task={task} deteleTask={deleteTask} /> */
+          <TaskCard key={task.id} task={task} />
           /* <div key={task.id}>
               <h2>{task.title}</h2>
               <p>{task.description}</p>
